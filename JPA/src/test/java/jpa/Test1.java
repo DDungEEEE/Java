@@ -25,4 +25,10 @@ public class Test1 {
 
         test.join(member);
     }
+
+    @Test
+    void findByName(){
+        String id = "prabbit2";
+        System.out.println("찾은 아이디는 : " + test.findById(id));
+    }
 }
