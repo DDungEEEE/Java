@@ -19,7 +19,7 @@ public class Test1 {
 
         Member member = new Member();
 
-        member.setId("prabbit2");
+
         member.setAge(25);
         member.setUsername("son");
 
