@@ -12,15 +12,18 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name="MEMBER")
+@Table(name="MEMBER", uniqueConstraints = {@UniqueConstraint(
+        name = "NAME_AGE_UNIQUE",
+        columnNames = {"NAME", "AGE"}
+)})
 @NoArgsConstructor
 public class Member {
 
     @Id
-    @Column(name="id")
+    @Column(name="ID")
     private String id;
 
-    @Column(name="name")
+    @Column(name="NAME", nullable = false, length = 10)
     private String username;
 
     private Integer age;
@@ -37,5 +40,5 @@ public class Member {
 
     @Lob
     private String description;
-    
+
 }
