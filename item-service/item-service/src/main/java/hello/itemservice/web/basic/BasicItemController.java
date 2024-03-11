@@ -27,7 +27,7 @@ public class BasicItemController {
     public String items(Model model){
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
-        return "basic/items";
+        return "/basic/items";
     }
 
     @GetMapping("/{itemId}")
@@ -35,6 +35,16 @@ public class BasicItemController {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
         return "/basic/item";
+    }
+
+    @GetMapping("/add")
+    public String addForm(){
+        return "/basic/addForm";
+    }
+
+    @PostMapping("/add")
+    public String save(){
+        return "/basic/addForm";
     }
 
     /**
